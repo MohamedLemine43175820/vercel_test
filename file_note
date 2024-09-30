@@ -1,0 +1,182 @@
+//how to create server et  Api dans node js  with usage express js 
+
+// use frameWork Express js pour facilitate creation  server et api et backend with node js 
+
+// - npm : site pour find packages node js et installe  comme     (pub dev pour flutter)
+
+// - package.json : for put packages used in project  et dependences
+// package : comme yaml dans dart    consist of   dependencies 
+
+// 1. npm init : pour add  file package.json 
+
+
+// 1. npm i express --save :   pour  install package  express 
+// or dependence   express js 
+
+// NB:  --save pour add cette package dans development et depoiment dans tous app
+// Add dans all app 
+// par default add      :  npm i express
+
+
+//   -save  -dev : pour install dans development just 
+
+// 4. apres installation express 
+// add two file : 
+
+// # node_modules  : any package you install yji m3a module tab3ilhe cette file pour add package dans mon app
+//#  package-lock.json :
+
+
+// 5. const app = express();                      // cette function from express package contains anything from server
+
+// app  :  now comme server 
+
+// https://fakeStoreapi/Products   
+// https//heroku.com/Products 
+
+// https://fakeStoreapi/  : server name 
+// Products  : url , endPoints or route 
+
+// endPoints : groupe of links enable you to interact with data base 
+
+
+
+// je cree endpoint get 
+
+app.get('/product' , (req , res)=>{
+
+    // 1. route name 
+    // 2. arrow function (req et res){}
+})
+
+
+
+// crate  first endPoints 
+
+// return html  code 
+
+//app.get('/products',( req , res)=>{
+
+  //  res.send("<h1> Hello from home<h1>");
+
+  // res.write  : dans node js 
+//});
+
+
+//  endPoint return Response  json data  Map 
+
+
+
+app.get('/product',( req , res)=>{
+
+      res.status(201).json({
+
+        "name":"lemine El Haje",
+         "age": 25,
+         "cuntry":"Mouritania"
+      });
+  });
+
+
+
+
+
+// npm i nodemon :  pour install  package nodemon pour  server  tjr run  just click ctrl  s 
+
+// nodemon  : pour restart server 
+
+// dans file package.json =>  script add :
+// "start": nodemon index.js         
+
+// if i want to run server just   npm start 
+
+
+
+
+// middle ware 
+
+
+
+app.use()   : t3arv middle ware 
+
+
+
+
+
+
+
+
+
+
+
+
+// je cree file  pour routes or endPoints 
+
+// import express pour use funcrion Router() pour cree route 
+
+
+
+
+
+
+/*
+Dans Express.js (et plus généralement dans Node.js), un middleware est une fonction qui a accès à l'objet requête (req), l'objet réponse (res), et à la fonction next dans le cycle de traitement d'une requête HTTP. Les middlewares sont utilisés pour intercepter, modifier ou répondre aux requêtes avant qu'elles n'atteignent la route finale.
+
+Voici les principales caractéristiques d'un middleware :
+
+Accès aux objets requête et réponse : Un middleware peut lire et modifier l'objet de la requête (req) et de la réponse (res).
+
+Fonction next : Il doit appeler next() pour passer la main au middleware suivant dans la pile, sinon la requête sera bloquée.
+
+Usage varié : Les middlewares peuvent être utilisés pour des tâches telles que l'authentification, la gestion des erreurs, la journalisation, le parsing des données, ou encore la mise en cache.
+
+
+في Express.js (وبشكل أعم في Node.js)، تعد البرامج الوسيطة وظيفة لديها حق الوصول إلى كائن الطلب (req)، وكائن الاستجابة (res)، والوظيفة التالية في دورة معالجة "طلب HTTP" . تُستخدم البرامج الوسيطة لاعتراض الطلبات أو تعديلها أو الاستجابة لها قبل أن تصل إلى المسار النهائي.
+
+فيما يلي الخصائص الرئيسية للبرمجيات الوسيطة:
+
+الوصول إلى كائنات الطلب والاستجابة: يمكن للبرامج الوسيطة قراءة وتعديل كائن الطلب (req) والاستجابة (res).
+
+الوظيفة التالية: يجب أن تستدعي التالي () لتمرير التحكم إلى البرنامج الوسيط التالي في المكدس، وإلا فسيتم حظر الطلب.
+
+الاستخدام المتنوع: يمكن استخدام البرامج الوسيطة لمهام مثل المصادقة أو معالجة الأخطاء أو التسجيل أو تحليل البيانات أو حتى التخزين المؤقت.
+
+
+// example 
+
+
+const express = require('express');
+const app = express();
+
+// Un middleware simple qui journalise l'URL et le type de requête
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next(); // Passe au middleware suivant ou à la route suivante
+});
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+  console.log('Serveur démarré sur le port 3000');
+});
+
+
+
+Dans cet exemple, le middleware journalise chaque requête effectuée sur le serveur avant de passer la main à la route appropriée avec next().
+
+في هذا المثال، تقوم البرامج الوسيطة بتسجيل كل طلب يتم تقديمه إلى الخادم قبل تمرير التحكم إلى المسار المناسب باستخدام next().
+
+*/
+
+
+
+/*
+
+Explications des changements :
+useNewUrlParser: true et useUnifiedTopology: true : Ce sont des options recommandées pour s'assurer que la connexion utilise les derniers standards des drivers MongoDB. Cela aide aussi à éviter des messages d'avertissement dans la console.
+
+Amélioration de la gestion des erreurs : Plutôt que d'afficher l'erreur entière (qui peut être très longue), j'ai utilisé err.message pour n'afficher que le message d'erreur. Si tu veux plus de détails dans le futur, tu peux toujours afficher err pour avoir une vue complète.
+
+*/
