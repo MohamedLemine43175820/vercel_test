@@ -8,6 +8,9 @@
     "start": "nodemon index.js"
   },
   "author": "med lemine El Haje",
+  "engines": {
+    "node": "20.9.0"
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",
